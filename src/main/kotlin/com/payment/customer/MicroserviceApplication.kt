@@ -1,4 +1,4 @@
-package com.payment.microservice
+package com.payment.customer
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
