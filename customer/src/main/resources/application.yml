@@ -12,6 +12,7 @@ spring:
     username: root
     password: challenge
     driver-class-name: com.mysql.cj.jdbc.Driver
+
   flyway:
     enabled: true
   jpa:

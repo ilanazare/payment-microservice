@@ -18,6 +18,16 @@ services:
       - my-db:/var/lib/mysql
     networks:
       - network_challenge
+  jenkins:
+    container_name: jenkins
+    image: jenkins/jenkins:lts
+    privileged: true
+    user: root
+    ports:
+      - '8181:8080'
+      - '50000:50000'
+    volumes:
+      - /home/usertqi/jenkins
 networks:
   network_challenge:
     driver: bridge
