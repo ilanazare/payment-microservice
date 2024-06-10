@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8181
 spring:
 #  security:
 #    user:
@@ -8,12 +8,13 @@ spring:
   application:
     name: challenge-crud-pix
   datasource:
-    url: jdbc:mysql://localhost:3306/challenge
+    url: jdbc:mysql://localhost:3306/customer
     username: root
     password: challenge
     driver-class-name: com.mysql.cj.jdbc.Driver
-
   flyway:
+    enabled: true
+  jenkins:
     enabled: true
   jpa:
     hibernate:

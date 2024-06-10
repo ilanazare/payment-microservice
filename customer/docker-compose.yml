@@ -2,12 +2,12 @@ version: '3.9'
 
 services:
   datasource:
-    image: mysql:8.3-oraclelinux8
+    image: mysql:8.1-oracle
     container_name: datasource
     restart: always
     environment:
       MYSQL_USER: 'challenge'
-      MYSQL_DATABASE: 'challenge'
+      MYSQL_DATABASE: 'customer'
       MYSQL_PASSWORD: 'challenge'
       MYSQL_ROOT_PASSWORD: 'challenge'
     ports:
@@ -24,12 +24,17 @@ services:
     privileged: true
     user: root
     ports:
-      - '8181:8080'
+      - '8080:8080'
       - '50000:50000'
+    networks:
+      - network_jenkins
     volumes:
-      - /home/usertqi/jenkins
+      - jenkins:/var/lib/jenkins
 networks:
   network_challenge:
     driver: bridge
+  network_jenkins:
+    driver: bridge
 volumes:
   my-db:
+  jenkins:

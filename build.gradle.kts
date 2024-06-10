@@ -34,9 +34,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.flywaydb:flyway-core")
-	implementation("org.flywaydb:flyway-mysql")
-
-	testImplementation("com.h2database:h2:2.2.224")
+	implementation("org.flywaydb:flyway-mysql:8.4.4")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	compileOnly("org.projectlombok:lombok")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
