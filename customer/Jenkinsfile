@@ -1,26 +1,26 @@
 pipeline{
     agent any
     stages{
-        stage ("Beginning"){
+        stage ("Build"){
             steps {
-                sh 'echo beginning'
+                sh 'gradle build'
 
             }
 
         }
-        stage ("Middle"){
-            steps{
-                sh 'echo middle'
-            }
-        }
-        stage ("End"){
-            steps{
-                sleep(30)
-                sh 'echo this is all folks...'
-            }
-        }
-
-
-        }
+//         stage ("Middle"){
+//             steps{
+//                 sh 'echo middle'
+//             }
+//         }
+//         stage ("End"){
+//             steps{
+//                 sleep(30)
+//                 sh 'echo this is all folks...'
+//             }
+//         }
+//
+//
+//         }
 
     }
