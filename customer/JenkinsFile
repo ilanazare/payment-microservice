@@ -1,0 +1,26 @@
+pipeline{
+    agent any
+    stages{
+        stage ("Beginning"){
+            steps {
+                sh 'echo beginning'
+
+            }
+
+        }
+        stage ("Middle"){
+            steps{
+                sh 'echo middle'
+            }
+        }
+        stage ("End"){
+            steps{
+                sleep(30)
+                sh 'echo this is all folks...'
+            }
+        }
+
+
+        }
+
+    }
