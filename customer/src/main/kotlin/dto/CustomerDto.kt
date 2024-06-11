@@ -1,18 +1,10 @@
-package com.payment.entity
+package com.payment.dto
 
-import jakarta.persistence.Entity
-import jakarta.persistence.Id
-import jakarta.persistence.Table
-import lombok.AllArgsConstructor
 import lombok.Data
-import lombok.NoArgsConstructor
 import java.time.LocalDateTime
 
-@Entity
-@Table(name = "customers")
 @Data
-data class Customers(
-    @Id
+data class CustomerDto(
     private val customerId: String,
     private val name: String,
     private val address: String,

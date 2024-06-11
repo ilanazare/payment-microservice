@@ -1,8 +1,5 @@
 package com.payment.entity
 
-import jakarta.persistence.Entity
-import jakarta.persistence.MappedSuperclass
-import lombok.Data
 import java.time.LocalDateTime
 
 data class BaseEntity(
