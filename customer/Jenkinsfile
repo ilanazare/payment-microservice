@@ -19,9 +19,5 @@ pipeline{
                 sh 'echo this is all folks...'
             }
         }
-
-
         }
-
-    }
     }
