@@ -1,15 +1,15 @@
-CREATE DATABASE IF NOT EXISTS customer;
+CREATE DATABASE IF NOT EXISTS customers;
 
 CREATE TABLE customers(
-  customer_id   varchar(100)    NOT NULL DEFAULT NULL,
-  name          varchar(100)    NOT NULL DEFAULT NULL,
-  address       varchar(200)    NOT NULL DEFAULT NULL,
-  email         varchar(100)    NOT NULL DEFAULT NULL,
-  mobile_number varchar(20)     NOT NULL DEFAULT NULL,
-  created_at    date            NOT NULL DEFAULT NULL,
-  created_by    varchar(20)     NOT NULL DEFAULT NULL,
-  updated_at    date            DEFAULT NULL,
-  updated_by    varchar(20)     DEFAULT NULL,
+  customer_id   varchar(100)    NOT NULL,
+  name          varchar(100)    NOT NULL,
+  address       varchar(200)    NOT NULL,
+  email         varchar(100)    NOT NULL,
+  mobile_number varchar(20)     NOT NULL,
+  created_at    date            NOT NULL,
+  created_by    varchar(20)     NOT NULL,
+  updated_at    date            NOT NULL,
+  updated_by    varchar(20)     NOT NULL,
   PRIMARY KEY (customer_id)
 
 ) ENGINE = InnoDB;

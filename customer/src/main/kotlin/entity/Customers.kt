@@ -16,6 +16,7 @@ data class Customers(
     private val customerId: String,
     private val name: String,
     private val address: String,
+    private val email: String,
     private val mobileNumber: Number,
     private val createdAt: LocalDateTime,
     private val createBy: String,
