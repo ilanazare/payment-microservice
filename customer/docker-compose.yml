@@ -2,22 +2,26 @@ version: '3.9'
 
 services:
   datasource:
-    image: mysql:8.1-oracle
+    image: gvenzl/oracle-free:latest
     container_name: datasource
     restart: always
     environment:
-      MYSQL_USER: 'challenge'
-      MYSQL_DATABASE: 'customer'
-      MYSQL_PASSWORD: 'challenge'
-      MYSQL_ROOT_PASSWORD: 'challenge'
+      ORACLE_DATABESE: 'PDB1'
+      ORACLE_PASSWORD: 'sys_user_password'
+      APP_USER: 'my_user'
+      APP_USER_PASSWORD: 'password_i_should_change'
     ports:
-      - '3306:3306'
-    expose:
-      - '3306'
+      - '1521:1521'
     volumes:
-      - my-db:/var/lib/mysql
+      - oracle-data:/opt/oracle/oracleDb
+      - oracle-backup:/opt/oracle/backup
+    healthcheck:
+      test: ["CMD", "@healthcheck.sql"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
     networks:
-      - network_challenge
+      - network_datasource
   jenkins:
     container_name: jenkins
     image: jenkins/jenkins:lts
@@ -31,10 +35,11 @@ services:
     volumes:
       - jenkins:/var/lib/jenkins
 networks:
-  network_challenge:
+  network_datasource:
     driver: bridge
   network_jenkins:
     driver: bridge
 volumes:
-  my-db:
+  oracle-data:
+  oracle-backup:
   jenkins:

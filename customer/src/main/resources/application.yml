@@ -6,12 +6,11 @@ spring:
 #      name: challenge
 #      password: challenge
   application:
-    name: challenge-crud-pix
+    name: microservice
   datasource:
-    url: jdbc:mysql://localhost:3306/customer
-    username: root
-    password: challenge
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:oracle:thin:@localhost:${{ job.services.oracle.ports[1521] }}/FREEPDB1
+    username: my_user
+    password: password_i_should_change
   flyway:
     enabled: true
   jenkins:
