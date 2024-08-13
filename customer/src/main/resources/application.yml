@@ -1,20 +1,20 @@
 server:
   port: 8181
 spring:
-#  security:
-#    user:
-#      name: challenge
-#      password: challenge
   application:
-    name: microservice
+    name: payment-microservice
   datasource:
-    url: jdbc:oracle:thin:@localhost:${{ job.services.oracle.ports[1521] }}/FREEPDB1
+    url: jdbc:oracle:thin:@//localhost:1521/FREEPDB1
     username: my_user
     password: password_i_should_change
-  flyway:
-    enabled: true
+    driver-class-name=oracle:
+      jdbc:
+        driver:
+          OracleDriver:
   jenkins:
     enabled: true
+  flyway:
+    enabled: false
   jpa:
     hibernate:
       ddl-auto: update

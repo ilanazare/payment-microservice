@@ -3,7 +3,7 @@ version: '3.9'
 services:
   datasource:
     image: gvenzl/oracle-free:latest
-    container_name: datasource
+    container_name: oracle
     restart: always
     environment:
       ORACLE_DATABESE: 'PDB1'
