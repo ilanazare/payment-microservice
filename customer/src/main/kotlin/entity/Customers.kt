@@ -1,11 +1,11 @@
 package com.payment.entity
 
-import jakarta.persistence.Entity
 import jakarta.persistence.Id
 import jakarta.persistence.Table
-import lombok.AllArgsConstructor
+import jakarta.persistence.Entity
+import jakarta.persistence.GeneratedValue
+import jakarta.persistence.GenerationType
 import lombok.Data
-import lombok.NoArgsConstructor
 import java.time.LocalDateTime
 
 @Entity
@@ -13,6 +13,8 @@ import java.time.LocalDateTime
 @Data
 data class Customers(
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private val id: Int,
     private val customerId: String,
     private val name: String,
     private val address: String,
