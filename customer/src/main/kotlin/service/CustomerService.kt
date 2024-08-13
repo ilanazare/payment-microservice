@@ -9,4 +9,6 @@ class CustomerService(
     private val customerRepository: CustomerRepository,
 ) {
     fun save(entity: Customers): Customers = customerRepository.save(entity)
+
+    fun findCustomerByCustomerId(customerId: String) = customerRepository.findCustomerByCustomerId(customerId)
 }

@@ -1,0 +1,21 @@
+server:
+  port: 8181
+spring:
+  application:
+    name: payment-microservice
+  datasource:
+    url: jdbc:oracle:thin:@//localhost:1521/FREEPDB1
+    username: my_user
+    password: password_i_should_change
+    driver-class-name=oracle:
+      jdbc:
+        driver:
+          OracleDriver:
+  jenkins:
+    enabled: true
+  flyway:
+    enabled: false
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
