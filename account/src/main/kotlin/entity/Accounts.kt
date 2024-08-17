@@ -6,6 +6,8 @@ import jakarta.persistence.Table
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import lombok.Data
+import java.time.LocalDate
+import java.time.LocalDateTime
 
 @Entity
 @Table(name = "account")
@@ -13,9 +15,10 @@ import lombok.Data
 data class Accounts(
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private val id: Int,
-        private val customerId: String,
-        private val account: String,
-        private val balance: Double,
+        val id: Int,
+        val customerId: String,
+        val account: String,
+        val balance: Double,
+        val createdAt: LocalDateTime = LocalDateTime.now(),
         )
 

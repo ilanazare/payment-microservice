@@ -1,16 +1,15 @@
 package com.payment.dto
 
+import lombok.AllArgsConstructor
 import lombok.Data
 import java.time.LocalDateTime
 
 @Data
 data class CustomerDto(
-    private val customerId: String,
-    private val name: String,
-    private val address: String,
-    private val mobileNumber: Number,
-    private val createdAt: LocalDateTime,
-    private val createBy: String,
-    private val updateAt: LocalDateTime,
-    private val updateBy: String
+    val customerId: String,
+    val name: String,
+    val address: String,
+    val email: String,
+    val mobileNumber: String,
+    val createdAt: LocalDateTime = LocalDateTime.now(),
 )
